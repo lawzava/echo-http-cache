@@ -175,7 +175,7 @@ func (client *Client) Middleware() echo.MiddlewareFunc {
 
 				statusCode := writer.statusCode
 				value := resBody.Bytes()
-				if statusCode < 400 {
+				if statusCode == http.StatusOK {
 					now := time.Now()
 
 					response := Response{
